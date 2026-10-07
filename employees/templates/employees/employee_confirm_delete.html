@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete {{ employee.full_name }}  | Employee Management System {% endblock %}
+
+{% block content %}
+<h1 class="fw-bold mb-4">Delete Employee</h1>
+
+<div class="app-card">
+    <p class="fs-5">Are you sure you want to delete <strong>{{ employee.full_name}}</strong> ({{ employee.employee_id }})?</p>
+    <p class="text-danger">This cannot be undone.</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger">Yes, delete</button>
+        <a href="{% url 'employees:employee-list' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

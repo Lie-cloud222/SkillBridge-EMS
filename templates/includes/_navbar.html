@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg navbar-dark app-navbar">
+    <div class="container-fluid px-4">
+        <a class="navbar-brand" href="{% url 'employees:hello' %}">
+            <i class="fa-solid fa-users-gear me-2"></i>Employee Management System
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+            {% if user.is_authenticated %}
+            <ul class="navbar-nav me-auto">
+                {% if perms.employees.view_employee %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'employees:employee-list' %}">
+                        <i class="fa-solid fa-list me-1"></i>All Employees
+                    </a>
+                </li>
+                {% endif %}
+                {% if perms.employees.add_employees %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'employees:employees-add' %}">
+                        <i class="fa-solid fa-plus me-1"></i>Add Employee
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+            {% if perms.employees.view_employee %}
+            <form class="d-flex me-3" method="get" action="{% url 'employees:employee-list' %}">
+                <input class="form-control me-2" type="search" name="q" placeholder="Search" value="{{ request.GET.q }}">
+                <button class="btn btn-light" type="submit">Search</button>
+            </form>
+            {% endif %}
+
+            <span class="navbar-text me-3">{{ user.username }}</span>
+
+            <form method="post" action="{% url 'logout' %}" class="d-inline">
+                {% csrf_token%}
+                <button type="submit" class="btn btn-outline-light btn-sm">Log out</button>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</nav>

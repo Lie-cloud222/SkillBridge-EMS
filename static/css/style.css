@@ -1,0 +1,55 @@
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #2bb5e0 0%, #7b52a6 50%, #e0307f 100%);
+    background-attachment: fixed;
+    color: #fff;
+}
+
+.app-navbar {
+    background-color: #e8337f;
+}
+
+.app-navbar .nav-link {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.app-navbar .nav-link:hover {
+    color: #fff
+}
+
+.app-card {
+    background: #ebebeb;
+    color: #222;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0, 2);
+}
+
+.app-table {
+    --bs-table-bg: #6a6ac4;
+    --bs-table-color: #fff;
+    --bs-table-border-color: rgba(255, 255, 255, 0.25);
+    --bs-table-hover-bg: #5b5bb3;
+    --bs-table-hover-color: #fff;
+}
+
+.app-table thead th { font-weight: 700; }
+label.form-label { font-weight: 500; }
+
+.btn-pink { background: #e8337f; border-color: #e8337f; color: #fff; }
+.btn-pink:hover { background: #cf2870; border-color: #cf2870; color: #fff; }
+.btn-clear { background: rgba(255, 255, 255, 0.55); color: #fff; }
+.btn-clear:hover { background: rgba(255, 255, 255, 0.75); color: #fff; }
+
+.btn-action {
+  background: #5252a8;
+  border-width: 1.5px;
+  color: #fff;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.btn-view   { border-color: #1fc8a0; }
+.btn-edit   { border-color: #f5b400; }
+.btn-delete { border-color: #ee6a2b; }
+.btn-action:hover { color: #fff; filter: brightness(1.2); }
