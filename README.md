@@ -17,7 +17,6 @@ A Django web application for managing employee information, backed by SQL Server
 - [Delivery Plan](#delivery-plan)
 - [Testing Approach](#testing-approach)
 - [Security Considerations](#security-considerations)
-- [Timeline](#timeline)
 
 ## Project Introduction
 
