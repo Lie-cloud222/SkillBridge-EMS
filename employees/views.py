@@ -10,6 +10,7 @@ from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import DeleteView, DetailView, FormView, ListView
+from urllib.parse import urlencode
 
 from .forms import EmployeeForm
 from .models import Department, Employee
@@ -21,6 +22,8 @@ service = EmployeeService()          # one shared service object for all views
 def hello(request):
     return render(request, 'employees/hello.html')
 
+FILTER_KEYS = ('q', 'department', 'status')
+FILTER_SESSION_KEY = 'employee_list_filters'
 
 class EmployeeListView(PermissionRequiredMixin, ListView):
     permission_required = 'employees.view_employee'
@@ -28,27 +31,39 @@ class EmployeeListView(PermissionRequiredMixin, ListView):
     context_object_name = 'employees'
     paginate_by = 10
 
+    def get_filters(self):
+        """Return (filters, restored). Saves new filters in the session, or loads the saved ones."""
+        request = self.request
+        if 'clear' in request.GET:
+            request.session.pop(FILTER_SESSION_KEY, None)
+            return {}, False
+        if any(key in request.GET for key in FILTER_KEYS):
+            filters = {key: request.GET.get(key, '').strip() for key in FILTER_KEYS}
+            request.session[FILTER_SESSION_KEY] = filters
+            return filters, False
+        saved = request.session.get(FILTER_SESSION_KEY, {})
+        return saved, any(saved.values())
+
     def get_queryset(self):
-        q = self.request.GET.get('q', '').strip()
-        department = self.request.GET.get('department', '')
-        status = self.request.GET.get('status', '')
+        self.filters, self.restored = self.get_filters()
+        department = self.filters.get('department', '')
         department = int(department) if department.isdigit() else None
-        return service.list_employees(q or None, department, status or None)
+        return service.list_employees(
+            self.filters.get('q') or None, department, self.filters.get('status') or None
+        )
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        params = self.request.GET.copy()
-        params.pop('page', None)
         context.update({
-            'q': self.request.GET.get('q', ''),
-            'selected_department': self.request.GET.get('department', ''),
-            'selected_status': self.request.GET.get('status', ''),
+            'q': self.filters.get('q', ''),
+            'selected_department': self.filters.get('department', ''),
+            'selected_status': self.filters.get('status', ''),
             'departments': Department.objects.all(),
             'statuses': Employee.Status.choices,
-            'querystring': params.urlencode(),
+            'querystring': urlencode({k: v for k, v in self.filters.items() if v}),
+            'restored': self.restored,
         })
         return context
-
 
 class EmployeeDetailView(PermissionRequiredMixin, DetailView):
     permission_required = 'employees.view_employee'

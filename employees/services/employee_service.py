@@ -8,6 +8,17 @@ from employees.repositories.employee_repository import EmployeeRepository
 class EmployeeService:  
     CACHE_KEY_STATS = 'employees:stats' 
     CACHE_TIMEOUT = 300 
+    CACHE_KEY_DEPARTMENTS = 'departments:all'
+
+    def get_departments(self) -> list:
+        departments = cache.get(self.CACHE_KEY_DEPARTMENTS)
+        if departments is None:
+            departments = self.repository.list_departments()
+            cache.set(self.CACHE_KEY_DEPARTMENTS, departments, self.CACHE_TIMEOUT)
+        return departments
+
+    def recent_employees(self, limit: int = 5):
+        return self.repository.recent(limit)
  
     def __init__(self, repository: EmployeeRepository = None): 
         self.repository = repository or EmployeeRepository() 

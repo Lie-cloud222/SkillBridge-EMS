@@ -92,3 +92,10 @@ class EmployeeRepository:
             .annotate(count=Count('id'))
             .values_list('department__name', 'count')
         )
+
+    def list_departments(self):
+        from employees.models import Department
+        return list(Department.objects.values('id', 'name'))
+
+    def recent(self, limit: int = 5):
+        return self.model.objects.select_related('department').order_by('-created_at')[:limit]

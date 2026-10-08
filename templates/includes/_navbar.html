@@ -17,6 +17,11 @@
                         <i class="fa-solid fa-list me-1"></i>All Employees
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'dashboard:home' %}">
+                        <i class="fa-solid fa-chart-simple me-1"></i>Dashboard
+                    </a>
+                </li>
                 {% endif %}
                 {% if perms.employees.add_employees %}
                 <li class="nav-item">

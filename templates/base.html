@@ -18,8 +18,15 @@
         {% block content %}{% endblock %}
     </main>
 
+        {% if perms.employees.view_employee %}
+      <div id="live-banner" class="alert alert-warning d-none" role="status">
+        <span></span>. <a href="" onclick="location.reload(); return false;">Refresh</a>
+      </div>
+    {% endif %}
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{% static 'js/app.js' %}"></script>
+    {% if perms.employees.view_employee %}<script src="{% static 'js/live.js' %}"></script>{% endif %}
     {% block extra_js %}{% endblock %}
 </body>
 </html>

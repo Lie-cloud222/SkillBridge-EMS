@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Dashboard | SkillBridge EMS{% endblock %}
+
+{% block content %}
+<h1 class="fw-bold mb-4">Dashboard</h1>
+
+<div class="row g-3 mb-4">
+  <div class="col-md-4"><div class="app-card text-center"><div class="small">Total employees</div><div class="display-6 fw-bold" id="stat-total">{{ stats.total }}</div></div></div>
+  <div class="col-md-4"><div class="app-card text-center"><div class="small">Active</div><div class="display-6 fw-bold" id="stat-active">{{ stats.active }}</div></div></div>
+  <div class="col-md-4"><div class="app-card text-center"><div class="small">Inactive</div><div class="display-6 fw-bold" id="stat-inactive">{{ stats.inactive }}</div></div></div>
+</div>
+
+<div class="row g-3">
+  <div class="col-md-4"><div class="app-card">
+    <h2 class="h6 fw-bold">By department</h2>
+    <ul class="list-unstyled mb-0" id="stat-departments">
+      {% for name, count in stats.by_department.items %}<li>{{ name }}: {{ count }}</li>{% endfor %}
+    </ul>
+  </div></div>
+  <div class="col-md-4"><div class="app-card">
+    <h2 class="h6 fw-bold">Recently added</h2>
+    <ul class="list-unstyled mb-0">
+      {% for e in recent %}<li>{{ e.full_name }} ({{ e.department.name }})</li>{% empty %}<li>None yet</li>{% endfor %}
+    </ul>
+  </div></div>
+  <div class="col-md-4"><div class="app-card">
+    <h2 class="h6 fw-bold">Live activity</h2>
+    <ul class="list-unstyled mb-0" id="activity"><li id="activity-empty">Waiting for changes...</li></ul>
+  </div></div>
+</div>
+{% endblock %}
+
+{% block extra_js %}<script src="{% static 'js/dashboard.js' %}"></script>{% endblock %}
