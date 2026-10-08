@@ -13,6 +13,6 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
-RUN DJANGO_SECRET_KEY=build-only python manage.py collectstatic --noinput
+#RUN DJANGO_SECRET_KEY=build-only python manage.py collectstatic --noinput
 
-CMD python manage.py migrate --noinput && python manage.py setup_roles && daphne -b 0.0.0.0 -p ${PORT:-10000} config.asgi:application
+CMD python manage.py collectstatic --noinput && python manage.py migrate --noinput && python manage.py setup_roles && daphne -b 0.0.0.0 -p ${PORT:-10000} config.asgi:application
