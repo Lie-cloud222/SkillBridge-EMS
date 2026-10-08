@@ -1,3 +1,5 @@
+import logging
+logger = logging.getLogger(__name__)
 from typing import List, Optional 
 from django.core.cache import cache 
 from employees.repositories.employee_repository import EmployeeRepository 
@@ -24,29 +26,40 @@ class EmployeeService:
     def filter_employees(self, department: str = None, is_active: bool = None) -> List: 
         return list(self.repository.filter(department=department, is_active=is_active)) 
  
-    def create_employee(self, data: dict): 
-        if self.repository.email_exists(data.get('email')): 
-            raise ValueError("An employee with this email already exists.") 
-        if self.repository.employee_id_exists(data.get('employee_id')): 
-            raise ValueError("This employee ID is already in use.") 
-        employee = self.repository.create(data) 
-        self._invalidate_cache() 
-        return employee 
+    def create_employee(self, data: dict):
+        if self.repository.email_exists(data.get('email')):
+            logger.warning("Create rejected: duplicate email %s", data.get('email'))
+            raise ValueError("An employee with this email already exists.")
+        if self.repository.employee_id_exists(data.get('employee_id')):
+            logger.warning("Create rejected: duplicate employee ID %s", data.get('employee_id'))
+            raise ValueError("This employee ID is already in use.")
+        employee = self.repository.create(data)
+        self._invalidate_cache()
+        logger.info("Employee created: %s", employee)
+        return employee
  
-    def update_employee(self, pk: int, data: dict): 
-        if not self.repository.get_by_id(pk): 
-            raise ValueError(f"Employee with ID {pk} not found.") 
-        new_email = data.get('email') 
-        if new_email and self.repository.email_exists(new_email, exclude_id=pk): 
-            raise ValueError("An employee with this email already exists.") 
-        updated = self.repository.update(pk, data) 
-        self._invalidate_cache() 
-        return updated 
+    def update_employee(self, pk: int, data: dict):
+        if not self.repository.get_by_id(pk):
+            logger.warning("Update rejected: employee id=%s not found", pk)
+            raise ValueError(f"Employee with ID {pk} not found.")
+        new_email = data.get('email')
+        if new_email and self.repository.email_exists(new_email, exclude_id=pk):
+            logger.warning("Update rejected: duplicate email %s", new_email)
+            raise ValueError("An employee with this email already exists.")
+        new_emp_id = data.get('employee_id')
+        if new_emp_id and self.repository.employee_id_exists(new_emp_id, exclude_id=pk):
+            logger.warning("Update rejected: duplicate employee ID %s", new_emp_id)
+            raise ValueError("This employee ID is already in use.")
+        updated = self.repository.update(pk, data)
+        self._invalidate_cache()
+        logger.info("Employee updated: id=%s", pk)
+        return updated
  
-    def delete_employee(self, pk: int) -> bool: 
-        result = self.repository.delete(pk) 
-        self._invalidate_cache() 
-        return result 
+    def delete_employee(self, pk: int) -> bool:
+        result = self.repository.delete(pk)
+        self._invalidate_cache()
+        logger.warning("Employee deleted: id=%s (success=%s)", pk, result)
+        return result
  
     def get_statistics(self) -> dict: 
         cached = cache.get(self.CACHE_KEY_STATS) 

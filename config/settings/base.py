@@ -151,3 +151,44 @@ LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'employees:employee-list'
 LOGOUT_REDIRECT_URL = 'login'
 
+LOG_DIR = BASE_DIR / 'logs'
+LOG_DIR.mkdir(exist_ok=True)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'standard': {
+            'format': '{asctime} | {levelname} | {name} | {message}',
+            'style': '{',
+        },
+    },
+    'handlers': {
+        'consoles': {'class': 'logging.StreamHandler', 'formatter': 'standard'},
+        'file': {
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': LOG_DIR / 'app.log',
+            'maxBytes': 5 * 1024 * 1024,
+            'backupCount': 3,
+            'formatter': 'standard',
+            'encoding': 'utf-8',
+        },
+    },
+    'logging': {
+        'employees': {'handlers': ['console', 'file'], 'level': 'INFO', 'propagate': True},
+    },
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ],
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',
+    ],
+}

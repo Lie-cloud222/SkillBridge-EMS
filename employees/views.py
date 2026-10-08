@@ -1,3 +1,8 @@
+import logging
+from django.db import DatabaseError
+
+logger = logging.getLogger(__name__)
+
 from django.contrib import messages
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.core.exceptions import ValidationError
@@ -68,6 +73,7 @@ class EmployeeCreateView(PermissionRequiredMixin, FormView):
         return context
 
     def form_valid(self, form):
+        user = self.request.user.username
         try:
             employee = service.create_employee(form.cleaned_data)
         except ValueError as error:
@@ -77,10 +83,13 @@ class EmployeeCreateView(PermissionRequiredMixin, FormView):
             for message in error.messages:
                 form.add_error(None, message)
             return self.form_invalid(form)
+        except DatabaseError:
+            logger.exception("Database error creating an employee (user %s)", user)
+            form.add_error(None, "Something went wrong while saving. Please try again.")
+            return self.form_invalid(form)
         messages.success(self.request, f"{employee.full_name} was added.")
         return redirect('employees:employee-list')
-
-
+    
 class EmployeeUpdateView(PermissionRequiredMixin, FormView):
     permission_required = 'employees.change_employee'
     template_name = 'employees/employee_form.html'
@@ -105,15 +114,24 @@ class EmployeeUpdateView(PermissionRequiredMixin, FormView):
         return context
 
     def form_valid(self, form):
+        user = self.request.user.username
+        pk = self.get_employee().pk
         try:
-            employee = service.update_employee(self.get_employee().pk, form.cleaned_data)
+            employee = service.update_employee(pk, form.cleaned_data)
         except ValueError as error:
+            logger.warning("Update of pk=%s rejected for user %s: %s", pk, user, error)
             form.add_error(None, str(error))
             return self.form_invalid(form)
         except ValidationError as error:
+            logger.warning("Update of pk=%s failed validation for user %s: %s", pk, user, error.messages)
             for message in error.messages:
                 form.add_error(None, message)
             return self.form_invalid(form)
+        except DatabaseError:
+            logger.exception("Database error updating employee pk=%s (user %s)", pk, user)
+            form.add_error(None, "Something went wrong while saving. Please try again.")
+            return self.form_invalid(form)
+        logger.info("User %s updated employee pk=%s", user, pk)
         messages.success(self.request, f"{employee.full_name} was updated.")
         return redirect('employees:employee-detail', pk=employee.pk)
 
@@ -127,7 +145,14 @@ class EmployeeDeleteView(PermissionRequiredMixin, DeleteView):
 
     def form_valid(self, form):
         self.object = self.get_object()
-        name = self.object.full_name
-        service.delete_employee(self.object.pk)
+        name, pk = self.object.full_name, self.object.pk
+        user = self.request.user.username
+        try:
+            service.delete_employee(pk)
+        except DatabaseError:
+            logger.exception("Database error deleting employee pk=%s (user %s)", pk, user)
+            messages.error(self.request, "The employee could not be deleted. Please try again.")
+            return HttpResponseRedirect(self.success_url)
+        logger.info("User %s deleted employee pk=%s", user, pk)
         messages.success(self.request, f"{name} was deleted.")
         return HttpResponseRedirect(self.success_url)

@@ -36,7 +36,9 @@ class Employee(models.Model):
     first_name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50)
     email = models.EmailField(unique=True)
-    phone_number = models.CharField(max_length=20, validators=[phone_validator])
+    phone_number = models.CharField(
+        max_length=20, blank=True, validators=[phone_validator]
+    )
     department = models.ForeignKey(Department, on_delete=models.PROTECT, related_name='employees')
     job_title = models.CharField(max_length=100)
     employment_type = models.CharField(max_length=50)
@@ -57,5 +59,7 @@ class Employee(models.Model):
     def full_name(self):
         return f"{self.first_name} {self.last_name}"
 
-
+    def clean(self):
+        if self.status == self.Status.TERMINATED and self.is_active:
+            raise ValidationError("A terminated employee cannot be marked as active.")
 
