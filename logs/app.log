@@ -1,0 +1,111 @@
+2026-10-08 11:23:51,439 | INFO | employees | REQUEST GET / | User: Anonymous
+2026-10-08 11:23:51,442 | ERROR | employees | EXCEPTION GET / | Error: employees/hello.html
+Traceback (most recent call last):
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\asgiref\sync.py", line 577, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\django\core\handlers\base.py", line 255, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\asgiref\sync.py", line 526, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TALEAH.D\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\TALEAH.D\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\asgiref\sync.py", line 581, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\asgiref\sync.py", line 508, in func
+    return context.run(run_child)
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\asgiref\sync.py", line 506, in run_child
+    return child()
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\employees\views.py", line 23, in hello
+    return render(request, 'employees/hello.html')
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\django\shortcuts.py", line 27, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: employees/hello.html
+2026-10-08 11:23:51,506 | ERROR | django.request | Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\asgiref\sync.py", line 577, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\django\core\handlers\exception.py", line 43, in inner
+    response = await get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\asgiref\sync.py", line 577, in thread_handler
+    raise exc_info[1]
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\django\core\handlers\base.py", line 255, in _get_response_async
+    response = await wrapped_callback(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+        request, *callback_args, **callback_kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\asgiref\sync.py", line 526, in __call__
+    ret = await asyncio.shield(exec_coro)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TALEAH.D\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\thread.py", line 86, in run
+    result = ctx.run(self.task)
+  File "C:\Users\TALEAH.D\AppData\Local\Python\pythoncore-3.14-64\Lib\concurrent\futures\thread.py", line 73, in run
+    return fn(*args, **kwargs)
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\asgiref\sync.py", line 581, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\asgiref\sync.py", line 508, in func
+    return context.run(run_child)
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\asgiref\sync.py", line 506, in run_child
+    return child()
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\employees\views.py", line 23, in hello
+    return render(request, 'employees/hello.html')
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\django\shortcuts.py", line 27, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\TALEAH.D\Documents\skillbridge_ems\venv\Lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: employees/hello.html
+2026-10-08 11:23:51,511 | INFO | employees | RESPONSE GET / | Status: 500 | Time: 0.072s
+2026-10-08 11:23:58,198 | INFO | employees | REQUEST GET /login/ | User: Anonymous
+2026-10-08 11:23:58,210 | INFO | employees | RESPONSE GET /login/ | Status: 200 | Time: 0.012s
+2026-10-08 11:24:14,641 | INFO | employees | REQUEST POST /login/ | User: Anonymous
+2026-10-08 11:24:16,299 | INFO | employees | RESPONSE POST /login/ | Status: 302 | Time: 1.658s
+2026-10-08 11:24:16,609 | INFO | employees | REQUEST GET /employees/ | User: Taleah
+2026-10-08 11:24:17,199 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.858s
+2026-10-08 11:24:24,095 | INFO | employees | REQUEST GET /dashboard/ | User: Taleah
+2026-10-08 11:24:24,161 | INFO | employees | RESPONSE GET /dashboard/ | Status: 200 | Time: 0.521s
+2026-10-08 11:24:27,254 | INFO | employees | REQUEST GET /employees/ | User: Taleah
+2026-10-08 11:24:27,279 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.038s
+2026-10-08 11:24:30,475 | INFO | employees | REQUEST GET /employees/add/ | User: Taleah
+2026-10-08 11:24:30,615 | INFO | employees | RESPONSE GET /employees/add/ | Status: 200 | Time: 0.171s
+2026-10-08 11:24:33,554 | INFO | employees | REQUEST GET /employees/ | User: Taleah
+2026-10-08 11:24:33,577 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.041s
+2026-10-08 11:27:50,815 | INFO | employees | REQUEST GET /employees/ | User: Taleah
+2026-10-08 11:27:50,920 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.779s
+2026-10-08 11:27:57,767 | INFO | employees | REQUEST GET /employees/ | User: Taleah
+2026-10-08 11:27:57,797 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.078s
+2026-10-08 11:28:12,486 | INFO | employees | REQUEST GET /dashboard/ | User: Taleah
+2026-10-08 11:28:12,512 | INFO | employees | RESPONSE GET /dashboard/ | Status: 200 | Time: 0.049s
+2026-10-08 11:28:16,169 | INFO | employees | REQUEST GET /employees/ | User: Taleah
+2026-10-08 11:28:16,206 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.066s
+2026-10-08 11:28:44,362 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-10-08 11:28:44,536 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.184s
+2026-10-08 11:28:44,560 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-10-08 11:28:44,678 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.129s
+2026-10-08 11:28:44,699 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-10-08 11:28:44,737 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.047s
+2026-10-08 11:28:45,443 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-10-08 11:28:45,580 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.149s
+2026-10-08 11:28:45,610 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-10-08 11:28:45,747 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.147s
+2026-10-08 11:28:46,389 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-10-08 11:28:46,549 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.170s
+2026-10-08 11:28:47,181 | INFO | employees | REQUEST GET /employees/ | User: hr_u
+2026-10-08 11:28:47,312 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.137s

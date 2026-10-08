@@ -5,13 +5,13 @@
 {% block content %}
 <h1 class="fw-bold mb-4">All Employees</h1>
 
-   {% if restored %}
-   <div class="alert alert-info d-flex justify-content-between">
-     <span>Showing your last search and filters.</span>
-     <a href="{% url 'employees:employee-list' %}?clear=1">Clear</a>
-   </div>
-   {% endif %}
-   
+{% if restored %}
+<div class="alert alert-info d-flex justify-content-between">
+  <span>Showing your last search and filters.</span>
+  <a href="{% url 'employees:employee-list' %}?clear=1">Clear</a>
+</div>
+{% endif %}
+
 <form method="get" class="row g-3 align-items-end mb-4">
   <input type="hidden" name="q" value="{{ q }}">      {# keep the navbar search text #}
 
@@ -37,23 +37,21 @@
 
   <div class="col-auto">
     <button type="submit" class="btn btn-pink"><i class="fa-solid fa-filter me-1"></i>Filter</button>
-    <a href="{% url 'employees:employee-list' %}" class="btn btn-clear">Clear</a>
+    <a href="{% url 'employees:employee-list' %}?clear=1" class="btn btn-clear">Clear</a>
   </div>
 </form>
-
-<div class="d-flex justify-content-between align-items-center mb-4">
-  <h1 class="fw-bold mb-0">All Employees</h1>
-  {% if perms.employees.add_employee %}
-    <a href="{% url 'employees:employee-add' %}" class="btn btn-pink">
-      <i class="fa-solid fa-plus me-1"></i>Add Employee
-    </a>
-  {% endif %}
-</div>
 
 <div class="app-card">
   <div class="d-flex justify-content-between align-items-center mb-3">
     <h2 class="h6 fw-bold mb-0"><i class="fa-solid fa-list me-2"></i>Employee Records ({{ page_obj.paginator.count }})</h2>
-    {% if q %}<span class="small text-muted">Search: "{{ q }}"</span>{% endif %}
+    <div class="d-flex align-items-center gap-3">
+      {% if q %}<span class="small text-muted">Search: "{{ q }}"</span>{% endif %}
+      {% if perms.employees.add_employee %}
+        <a href="{% url 'employees:employee-add' %}" class="btn btn-pink btn-sm">
+          <i class="fa-solid fa-plus me-1"></i>Add Employee
+        </a>
+      {% endif %}
+    </div>
   </div>
 
   <div class="table-responsive">
@@ -66,7 +64,6 @@
           <th>Email</th>
           <th>Department</th>
           <th>Status</th>
-          <th>Salary</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -79,7 +76,6 @@
             <td>{{ employee.email }}</td>
             <td>{{ employee.department.name }}</td>
             <td>{{ employee.get_status_display }}</td>
-            <td>{{ employee.salary }}</td>
             <td class="text-nowrap">
               <a href="{% url 'employees:employee-detail' employee.pk %}" class="btn btn-sm btn-action btn-view" title="View"><i class="fa-solid fa-circle-info"></i></a>
               {% if perms.employees.change_employee %}
