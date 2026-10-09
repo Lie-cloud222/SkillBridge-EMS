@@ -81,21 +81,26 @@ WSGI_APPLICATION = 'config.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.1/ref/settings/#databases
 
-DATABASES = {
-     'default': { 
-        'ENGINE': 'mssql', 
-        'NAME': os.getenv('DB_NAME', 'SkillBridgeEMS'), 
-        'USER': os.getenv('DB_USER', 'sa'), 
-        'PASSWORD': os.getenv('DB_PASSWORD', ''), 
-        'HOST': os.getenv('DB_HOST', r'.\SQLEXPRESS'), 
-        'PORT': os.getenv('DB_PORT', ''), 
-        'OPTIONS': { 
-            'driver': 'ODBC Driver 18 for SQL Server', 
-            'extra_params': 'TrustServerCertificate=yes;', 
-        },
+if os.getenv('DATABASE_URL'):
+    import dj_database_url
+    DATABASES = {
+        'default': dj_database_url.config(conn_max_age=600)
     }
-}
-
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'mssql',
+            'NAME': os.getenv('DB_NAME', 'SkillBridgeEMS'),
+            'USER': os.getenv('DB_USER', 'sa'),
+            'PASSWORD': os.getenv('DB_PASSWORD', ''),
+            'HOST': os.getenv('DB_HOST', r'.\SQLEXPRESS'),
+            'PORT': os.getenv('DB_PORT', ''),
+            'OPTIONS': {
+                'driver': 'ODBC Driver 18 for SQL Server',
+                'extra_params': 'TrustServerCertificate=yes;',
+            },
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/6.1/ref/settings/#auth-password-validators
