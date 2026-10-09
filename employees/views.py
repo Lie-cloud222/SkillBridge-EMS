@@ -19,8 +19,6 @@ from .services.employee_service import EmployeeService
 service = EmployeeService()          # one shared service object for all views
 
 
-def hello(request):
-    return render(request, 'employees:employee-list')
 
 FILTER_KEYS = ('q', 'department', 'status')
 FILTER_SESSION_KEY = 'employee_list_filters'
