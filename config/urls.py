@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import path, include
 from django.views.generic import RedirectView
+from employees.health import health_check
 
 urlpatterns = [
     path('', RedirectView.as_view(pattern_name='employees:employee-list', permanent=False)),
@@ -27,4 +28,5 @@ urlpatterns = [
     path('', include('employees.urls')),
     path('api/v1/', include('api.urls')),
     path('dashboard/', include('dashboard.urls')),
+    path('health/', health_check, name='health'),
 ]

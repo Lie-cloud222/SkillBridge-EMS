@@ -1,0 +1,24 @@
+{
+  "name": "skillbridge_ems",
+  "version": "1.0.0",
+  "description": "A Django web application for managing employee information, backed by SQL Server.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass static/scss/style.scss static/css/style.css",
+    "watch": "sass --watch static/scss/style.scss static/css/style.css",
+    "build": "sass --style=compressed --no-source-map static/scss/style.scss static/css/style.min.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lie-cloud222/SkillBridge-EMS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Lie-cloud222/SkillBridge-EMS/issues"
+  },
+  "homepage": "https://github.com/Lie-cloud222/SkillBridge-EMS#readme"
+}

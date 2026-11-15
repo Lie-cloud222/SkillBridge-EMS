@@ -9,9 +9,11 @@ from django.core.exceptions import ValidationError
 from django.http import Http404, HttpResponseRedirect
 from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
+from django.utils.decorators import method_decorator
 from django.views.generic import DeleteView, DetailView, FormView, ListView
 from urllib.parse import urlencode
 
+from .decorators import audit_action, no_store, rate_limit
 from .forms import EmployeeForm
 from .models import Department, Employee
 from .services.employee_service import EmployeeService
@@ -63,6 +65,7 @@ class EmployeeListView(PermissionRequiredMixin, ListView):
         })
         return context
 
+@method_decorator([audit_action('view employee'), no_store], name='dispatch')
 class EmployeeDetailView(PermissionRequiredMixin, DetailView):
     permission_required = 'employees.view_employee'
     template_name = 'employees/employee_detail.html'
@@ -75,6 +78,8 @@ class EmployeeDetailView(PermissionRequiredMixin, DetailView):
         return employee
 
 
+@method_decorator(audit_action('create employee'), name='dispatch')
+@method_decorator(rate_limit('create-employee', calls=30, period=60), name='post')
 class EmployeeCreateView(PermissionRequiredMixin, FormView):
     permission_required = 'employees.add_employee'
     template_name = 'employees/employee_form.html'
@@ -103,6 +108,8 @@ class EmployeeCreateView(PermissionRequiredMixin, FormView):
         messages.success(self.request, f"{employee.full_name} was added.")
         return redirect('employees:employee-list')
     
+@method_decorator([audit_action('update employee'), no_store], name='dispatch')
+@method_decorator(rate_limit('update-employee', calls=60, period=60), name='post')
 class EmployeeUpdateView(PermissionRequiredMixin, FormView):
     permission_required = 'employees.change_employee'
     template_name = 'employees/employee_form.html'
@@ -149,6 +156,8 @@ class EmployeeUpdateView(PermissionRequiredMixin, FormView):
         return redirect('employees:employee-detail', pk=employee.pk)
 
 
+@method_decorator(audit_action('delete employee'), name='dispatch')
+@method_decorator(rate_limit('delete-employee', calls=20, period=60), name='post')
 class EmployeeDeleteView(PermissionRequiredMixin, DeleteView):
     permission_required = 'employees.delete_employee'
     model = Employee
