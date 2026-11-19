@@ -1,0 +1,90 @@
+// _variables.scss - colours, fonts and sizes for SkillBridge EMS.
+// Change a value here and the whole site updates when Sass recompiles.
+
+// Website colours (the ones the site is actually built with)
+// CHECK these hex values against the colours in your current style.scss.
+$pink:           #e8337f;   // navbar, .btn-pink
+$pink-dark:      #cf2870;   // hover for pink
+$pink-gradient:  #e0307f;   // end colour of the page background gradient
+$purple:         #7b52a6;
+$blue:           #2bb5e0;
+
+// Component colours (cards, tables, buttons)
+$card-bg:        #ebebeb;
+$card-text:      #222222;
+$table-bg:       #6a6ac4;
+$table-hover-bg: #5b5bb3;
+$action-bg:      #5252a8;   // round icon buttons
+$view-border:    #1fc8a0;   // green  - view
+$edit-border:    #f5b400;   // yellow - edit
+$delete-border:  #ee6a2b;   // orange - delete
+
+// Brand roles (point at the website colours above) 
+$primary:        $pink;
+$primary-dark:   $pink-dark;
+$primary-light:  #fce7f1;   // soft pink background
+
+$secondary:      #64748b;   // secondary buttons, muted text
+$secondary-dark: #475569;
+
+// Status colours (meaning, not decoration) 
+$danger:         #dc2626;   // delete buttons, errors
+$danger-dark:    #b91c1c;
+$danger-light:   #fee2e2;
+
+$success:        #16a34a;   // saved messages, "active"
+$success-dark:   #15803d;
+$success-light:  #dcfce7;
+
+$warning:        #d97706;   // cautions, "on leave"
+$warning-dark:   #b45309;
+$warning-light:  #fef3c7;
+
+$info:           $blue;     // hints and notes
+$info-dark:      #1e93b8;
+$info-light:     #d4f1fa;
+
+// Neutrals
+$white:          #ffffff;
+$gray-50:        #f8fafc;   // page background
+$gray-100:       #f1f5f9;   // table stripes, cards
+$gray-200:       #e2e8f0;   // borders
+$gray-400:       #94a3b8;   // placeholder text
+$gray-700:       #334155;   // body text
+$gray-900:       #0f172a;   // headings
+$black:          #000000;
+
+// Where each colour is used
+$body-bg:        $gray-50;
+$body-color:     $gray-700;
+$heading-color:  $gray-900;
+$border-color:   $gray-200;
+$link-color:     $primary;
+$link-hover:     $primary-dark;
+$navbar-bg:      $pink;
+
+// Typography
+$font-family:    'Segoe UI', system-ui, -apple-system, Arial, sans-serif;
+$font-size-base: 1rem;
+$font-size-sm:   0.875rem;
+$font-size-lg:   1.25rem;
+
+// Spacing and shape 
+$spacing:        1rem;
+$spacing-sm:     0.5rem;
+$spacing-lg:     2rem;
+$radius:         12px;      // matches the cards
+$shadow:         0 1px 3px rgba(0, 0, 0, 0.12);
+
+// Breakpoints (@media queries) 
+$breakpoint-sm:  576px;
+$breakpoint-md:  768px;
+$breakpoint-lg:  992px;
+
+// Map of colours, so one @each loop can build classes
+$status-colours: (
+  'danger':  ($danger,  $danger-light),
+  'success': ($success, $success-light),
+  'warning': ($warning, $warning-light),
+  'info':    ($info,    $info-light),
+);

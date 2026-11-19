@@ -1719,3 +1719,640 @@ django.core.exceptions.PermissionDenied
 2026-11-16 00:01:57,166 | WARNING | employees.services.employee_service | Update rejected: duplicate email a@example.com
 2026-11-16 00:01:57,167 | WARNING | employees.services.employee_service | Update rejected: employee id=99 not found
 2026-11-16 00:01:57,167 | INFO | employees.services.employee_service | Employee created: namespace(pk=1, employee_id='EMP001', email='a@example.com')
+2026-11-16 15:51:15,483 | INFO | employees | REQUEST GET / | User: Anonymous
+2026-11-16 15:51:15,505 | INFO | employees | RESPONSE GET / | Status: 302 | Time: 0.021s
+2026-11-16 15:51:15,550 | INFO | employees | REQUEST GET /employees/ | User: Anonymous
+2026-11-16 15:51:15,555 | INFO | employees | RESPONSE GET /employees/ | Status: 302 | Time: 0.005s
+2026-11-16 15:51:15,577 | INFO | employees | REQUEST GET /login/ | User: Anonymous
+2026-11-16 15:51:15,776 | INFO | employees | RESPONSE GET /login/ | Status: 200 | Time: 0.199s
+2026-11-16 15:51:16,354 | INFO | employees | REQUEST GET /favicon.ico | User: Anonymous
+2026-11-16 15:51:16,442 | INFO | employees | RESPONSE GET /favicon.ico | Status: 404 | Time: 0.089s
+2026-11-16 15:51:16,455 | WARNING | django.request | Not Found: /favicon.ico
+2026-11-16 16:09:36,250 | INFO | employees | REQUEST GET /accounts/login/ | User: Anonymous
+2026-11-16 16:09:36,396 | INFO | employees | RESPONSE GET /accounts/login/ | Status: 404 | Time: 0.165s
+2026-11-16 16:09:36,412 | WARNING | django.request | Not Found: /accounts/login/
+2026-11-16 16:17:20,320 | INFO | employees | REQUEST GET /accounts/login/ | User: Anonymous
+2026-11-16 16:17:20,350 | INFO | employees | RESPONSE GET /accounts/login/ | Status: 404 | Time: 0.032s
+2026-11-16 16:17:20,354 | WARNING | django.request | Not Found: /accounts/login/
+2026-11-16 16:17:22,016 | INFO | employees | REQUEST GET /accounts/login/ | User: Anonymous
+2026-11-16 16:17:22,026 | INFO | employees | RESPONSE GET /accounts/login/ | Status: 404 | Time: 0.010s
+2026-11-16 16:17:22,031 | WARNING | django.request | Not Found: /accounts/login/
+2026-11-16 16:17:22,864 | INFO | employees | REQUEST GET /accounts/login/ | User: Anonymous
+2026-11-16 16:17:22,876 | INFO | employees | RESPONSE GET /accounts/login/ | Status: 404 | Time: 0.012s
+2026-11-16 16:17:22,882 | WARNING | django.request | Not Found: /accounts/login/
+2026-11-16 16:17:23,395 | INFO | employees | REQUEST GET /accounts/login/ | User: Anonymous
+2026-11-16 16:17:23,409 | INFO | employees | RESPONSE GET /accounts/login/ | Status: 404 | Time: 0.014s
+2026-11-16 16:17:23,415 | WARNING | django.request | Not Found: /accounts/login/
+2026-11-16 16:17:40,468 | INFO | employees | REQUEST GET / | User: Anonymous
+2026-11-16 16:17:40,494 | INFO | employees | RESPONSE GET / | Status: 302 | Time: 0.026s
+2026-11-16 16:17:40,509 | INFO | employees | REQUEST GET /employees/ | User: Anonymous
+2026-11-16 16:17:40,534 | INFO | employees | RESPONSE GET /employees/ | Status: 302 | Time: 0.025s
+2026-11-16 16:17:40,546 | INFO | employees | REQUEST GET /login/ | User: Anonymous
+2026-11-16 16:17:40,620 | INFO | employees | RESPONSE GET /login/ | Status: 200 | Time: 0.075s
+2026-11-16 16:17:52,063 | INFO | employees | REQUEST GET /accounts/login/ | User: Anonymous
+2026-11-16 16:17:52,075 | INFO | employees | RESPONSE GET /accounts/login/ | Status: 404 | Time: 0.011s
+2026-11-16 16:17:52,079 | WARNING | django.request | Not Found: /accounts/login/
+2026-11-16 16:18:03,762 | INFO | employees | REQUEST POST /login/ | User: Anonymous
+2026-11-16 16:18:05,264 | INFO | employees | RESPONSE POST /login/ | Status: 200 | Time: 1.502s
+2026-11-16 16:18:46,370 | INFO | employees | REQUEST POST /login/ | User: Anonymous
+2026-11-16 16:18:47,328 | INFO | employees | RESPONSE POST /login/ | Status: 200 | Time: 0.957s
+2026-11-16 16:19:07,283 | INFO | employees | REQUEST POST /login/ | User: Anonymous
+2026-11-16 16:19:08,364 | INFO | employees | RESPONSE POST /login/ | Status: 302 | Time: 1.080s
+2026-11-16 16:19:08,443 | INFO | employees | REQUEST GET /employees/ | User: admin_test
+2026-11-16 16:19:09,039 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.639s
+2026-11-16 16:19:11,940 | INFO | employees | REQUEST GET /employees/add/ | User: admin_test
+2026-11-16 16:19:11,943 | INFO | employees.audit | AUDIT start | action=create employee | user=admin_test | ip=127.0.0.1 | GET /employees/add/
+2026-11-16 16:19:12,126 | INFO | employees.audit | AUDIT done | action=create employee | user=admin_test | status=200 | 0.182s
+2026-11-16 16:19:12,291 | INFO | employees | RESPONSE GET /employees/add/ | Status: 200 | Time: 0.377s
+2026-11-16 16:20:08,923 | INFO | employees | REQUEST GET /employees/ | User: admin_test
+2026-11-16 16:20:09,205 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.358s
+2026-11-16 16:20:10,852 | INFO | employees | REQUEST GET /employees/3/delete/ | User: admin_test
+2026-11-16 16:20:10,856 | INFO | employees.audit | AUDIT start | action=delete employee | user=admin_test | ip=127.0.0.1 | GET /employees/3/delete/
+2026-11-16 16:20:11,135 | INFO | employees.audit | AUDIT done | action=delete employee | user=admin_test | status=200 | 0.279s
+2026-11-16 16:20:11,186 | INFO | employees | RESPONSE GET /employees/3/delete/ | Status: 200 | Time: 0.354s
+2026-11-16 16:20:12,490 | INFO | employees | REQUEST POST /employees/3/delete/ | User: admin_test
+2026-11-16 16:20:12,493 | INFO | employees.audit | AUDIT start | action=delete employee | user=admin_test | ip=127.0.0.1 | POST /employees/3/delete/
+2026-11-16 16:20:12,717 | WARNING | employees.services.employee_service | Employee deleted: id=3 (success=True)
+2026-11-16 16:20:12,718 | INFO | employees.views | User admin_test deleted employee pk=3
+2026-11-16 16:20:12,721 | INFO | employees.audit | AUDIT done | action=delete employee | user=admin_test | status=302 | 0.227s
+2026-11-16 16:20:12,725 | INFO | employees | RESPONSE POST /employees/3/delete/ | Status: 302 | Time: 0.285s
+2026-11-16 16:20:12,771 | INFO | employees | REQUEST GET /employees/ | User: admin_test
+2026-11-16 16:20:12,856 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.105s
+2026-11-16 16:20:14,008 | INFO | employees | REQUEST GET /employees/4/delete/ | User: admin_test
+2026-11-16 16:20:14,013 | INFO | employees.audit | AUDIT start | action=delete employee | user=admin_test | ip=127.0.0.1 | GET /employees/4/delete/
+2026-11-16 16:20:14,309 | INFO | employees.audit | AUDIT done | action=delete employee | user=admin_test | status=200 | 0.295s
+2026-11-16 16:20:14,316 | INFO | employees | RESPONSE GET /employees/4/delete/ | Status: 200 | Time: 0.331s
+2026-11-16 16:20:15,467 | INFO | employees | REQUEST POST /employees/4/delete/ | User: admin_test
+2026-11-16 16:20:15,469 | INFO | employees.audit | AUDIT start | action=delete employee | user=admin_test | ip=127.0.0.1 | POST /employees/4/delete/
+2026-11-16 16:20:15,790 | WARNING | employees.services.employee_service | Employee deleted: id=4 (success=True)
+2026-11-16 16:20:15,791 | INFO | employees.views | User admin_test deleted employee pk=4
+2026-11-16 16:20:15,793 | INFO | employees.audit | AUDIT done | action=delete employee | user=admin_test | status=302 | 0.323s
+2026-11-16 16:20:15,795 | INFO | employees | RESPONSE POST /employees/4/delete/ | Status: 302 | Time: 0.353s
+2026-11-16 16:20:15,838 | INFO | employees | REQUEST GET /employees/ | User: admin_test
+2026-11-16 16:20:16,139 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.326s
+2026-11-16 16:20:17,381 | INFO | employees | REQUEST GET /employees/2/delete/ | User: admin_test
+2026-11-16 16:20:17,386 | INFO | employees.audit | AUDIT start | action=delete employee | user=admin_test | ip=127.0.0.1 | GET /employees/2/delete/
+2026-11-16 16:20:17,617 | INFO | employees.audit | AUDIT done | action=delete employee | user=admin_test | status=200 | 0.231s
+2026-11-16 16:20:17,622 | INFO | employees | RESPONSE GET /employees/2/delete/ | Status: 200 | Time: 0.328s
+2026-11-16 16:20:18,640 | INFO | employees | REQUEST POST /employees/2/delete/ | User: admin_test
+2026-11-16 16:20:18,646 | INFO | employees.audit | AUDIT start | action=delete employee | user=admin_test | ip=127.0.0.1 | POST /employees/2/delete/
+2026-11-16 16:20:19,005 | WARNING | employees.services.employee_service | Employee deleted: id=2 (success=True)
+2026-11-16 16:20:19,008 | INFO | employees.views | User admin_test deleted employee pk=2
+2026-11-16 16:20:19,011 | INFO | employees.audit | AUDIT done | action=delete employee | user=admin_test | status=302 | 0.364s
+2026-11-16 16:20:19,013 | INFO | employees | RESPONSE POST /employees/2/delete/ | Status: 302 | Time: 0.411s
+2026-11-16 16:20:19,078 | INFO | employees | REQUEST GET /employees/ | User: admin_test
+2026-11-16 16:20:19,143 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.107s
+2026-11-16 16:20:20,863 | INFO | employees | REQUEST GET /dashboard/ | User: admin_test
+2026-11-16 16:20:21,808 | INFO | employees | RESPONSE GET /dashboard/ | Status: 200 | Time: 0.988s
+2026-11-16 16:21:11,164 | INFO | employees | REQUEST GET /employees/ | User: admin_test
+2026-11-16 16:21:11,707 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 1.010s
+2026-11-16 16:21:13,152 | INFO | employees | REQUEST GET /employees/add/ | User: admin_test
+2026-11-16 16:21:13,155 | INFO | employees.audit | AUDIT start | action=create employee | user=admin_test | ip=127.0.0.1 | GET /employees/add/
+2026-11-16 16:21:13,323 | INFO | employees.audit | AUDIT done | action=create employee | user=admin_test | status=200 | 0.167s
+2026-11-16 16:21:13,359 | INFO | employees | RESPONSE GET /employees/add/ | Status: 200 | Time: 0.230s
+2026-11-16 16:21:14,842 | INFO | employees | REQUEST POST /employees/add/ | User: admin_test
+2026-11-16 16:21:14,847 | INFO | employees.audit | AUDIT start | action=create employee | user=admin_test | ip=127.0.0.1 | POST /employees/add/
+2026-11-16 16:21:15,025 | INFO | employees.audit | AUDIT done | action=create employee | user=admin_test | status=200 | 0.177s
+2026-11-16 16:21:15,042 | INFO | employees | RESPONSE POST /employees/add/ | Status: 200 | Time: 0.234s
+2026-11-16 16:22:37,559 | INFO | employees | REQUEST POST /employees/add/ | User: admin_test
+2026-11-16 16:22:37,563 | INFO | employees.audit | AUDIT start | action=create employee | user=admin_test | ip=127.0.0.1 | POST /employees/add/
+2026-11-16 16:22:38,190 | INFO | employees.services.employee_service | Employee created: Preston Armstrong (2211)
+2026-11-16 16:22:38,197 | INFO | employees.audit | AUDIT done | action=create employee | user=admin_test | status=302 | 0.633s
+2026-11-16 16:22:38,198 | INFO | employees | RESPONSE POST /employees/add/ | Status: 302 | Time: 1.124s
+2026-11-16 16:22:38,305 | INFO | employees | REQUEST GET /employees/ | User: admin_test
+2026-11-16 16:22:38,499 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.281s
+2026-11-16 16:23:34,130 | INFO | employees | REQUEST GET /employees/ | User: admin_test
+2026-11-16 16:23:34,425 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.348s
+2026-11-18 09:16:42,359 | INFO | employees | REQUEST GET / | User: Anonymous
+2026-11-18 09:16:42,375 | INFO | employees | RESPONSE GET / | Status: 302 | Time: 0.549s
+2026-11-18 09:16:42,397 | INFO | employees | REQUEST GET /employees/ | User: Anonymous
+2026-11-18 09:16:42,401 | INFO | employees | RESPONSE GET /employees/ | Status: 302 | Time: 0.004s
+2026-11-18 09:16:42,412 | INFO | employees | REQUEST GET /login/ | User: Anonymous
+2026-11-18 09:16:42,468 | INFO | employees | RESPONSE GET /login/ | Status: 200 | Time: 0.056s
+2026-11-18 09:17:05,268 | INFO | employees | REQUEST POST /login/ | User: Anonymous
+2026-11-18 09:17:06,541 | INFO | employees | RESPONSE POST /login/ | Status: 302 | Time: 1.273s
+2026-11-18 09:17:06,585 | INFO | employees | REQUEST GET /employees/ | User: admin_test
+2026-11-18 09:17:06,868 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.302s
+2026-11-18 09:17:09,295 | INFO | employees | REQUEST GET /employees/5/delete/ | User: admin_test
+2026-11-18 09:17:09,297 | INFO | employees.audit | AUDIT start | action=delete employee | user=admin_test | ip=127.0.0.1 | GET /employees/5/delete/
+2026-11-18 09:17:09,390 | INFO | employees.audit | AUDIT done | action=delete employee | user=admin_test | status=200 | 0.093s
+2026-11-18 09:17:09,409 | INFO | employees | RESPONSE GET /employees/5/delete/ | Status: 200 | Time: 0.505s
+2026-11-18 09:17:30,599 | INFO | employees | REQUEST POST /employees/5/delete/ | User: admin_test
+2026-11-18 09:17:30,600 | INFO | employees.audit | AUDIT start | action=delete employee | user=admin_test | ip=127.0.0.1 | POST /employees/5/delete/
+2026-11-18 09:17:30,761 | WARNING | employees.services.employee_service | Employee deleted: id=5 (success=True)
+2026-11-18 09:17:30,762 | INFO | employees.views | User admin_test deleted employee pk=5
+2026-11-18 09:17:30,763 | INFO | employees.audit | AUDIT done | action=delete employee | user=admin_test | status=302 | 0.163s
+2026-11-18 09:17:30,766 | INFO | employees | RESPONSE POST /employees/5/delete/ | Status: 302 | Time: 0.190s
+2026-11-18 09:17:30,802 | INFO | employees | REQUEST GET /employees/ | User: admin_test
+2026-11-18 09:17:30,974 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.190s
+2026-11-18 09:26:36,475 | INFO | employees | REQUEST GET / | User: admin_test
+2026-11-18 09:26:36,512 | INFO | employees | RESPONSE GET / | Status: 302 | Time: 0.790s
+2026-11-18 09:26:36,577 | INFO | employees | REQUEST GET /employees/ | User: admin_test
+2026-11-18 09:26:36,932 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.372s
+2026-11-18 09:26:39,413 | INFO | employees | REQUEST GET /employees/add/ | User: admin_test
+2026-11-18 09:26:39,417 | INFO | employees.audit | AUDIT start | action=create employee | user=admin_test | ip=127.0.0.1 | GET /employees/add/
+2026-11-18 09:26:39,554 | INFO | employees.audit | AUDIT done | action=create employee | user=admin_test | status=200 | 0.135s
+2026-11-18 09:26:39,800 | INFO | employees | RESPONSE GET /employees/add/ | Status: 200 | Time: 0.404s
+2026-11-18 09:27:07,303 | INFO | employees | REQUEST POST /employees/add/ | User: admin_test
+2026-11-18 09:27:07,307 | INFO | employees.audit | AUDIT start | action=create employee | user=admin_test | ip=127.0.0.1 | POST /employees/add/
+2026-11-18 09:27:07,739 | INFO | employees.services.employee_service | Employee created: Preston Armstrong (2211)
+2026-11-18 09:27:07,745 | INFO | employees.audit | AUDIT done | action=create employee | user=admin_test | status=302 | 0.437s
+2026-11-18 09:27:07,747 | INFO | employees | RESPONSE POST /employees/add/ | Status: 302 | Time: 0.494s
+2026-11-18 09:27:07,815 | INFO | employees | REQUEST GET /employees/ | User: admin_test
+2026-11-18 09:27:07,937 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.173s
+2026-11-18 09:27:10,749 | INFO | employees | REQUEST GET /employees/6/ | User: admin_test
+2026-11-18 09:27:10,751 | INFO | employees.audit | AUDIT start | action=view employee | user=admin_test | ip=127.0.0.1 | GET /employees/6/
+2026-11-18 09:27:10,884 | INFO | employees.audit | AUDIT done | action=view employee | user=admin_test | status=200 | 0.132s
+2026-11-18 09:27:10,916 | INFO | employees | RESPONSE GET /employees/6/ | Status: 200 | Time: 0.185s
+2026-11-18 09:28:00,313 | INFO | employees | REQUEST GET / | User: admin_test
+2026-11-18 09:28:00,320 | INFO | employees | RESPONSE GET / | Status: 302 | Time: 0.047s
+2026-11-18 09:28:00,353 | INFO | employees | REQUEST GET /employees/ | User: admin_test
+2026-11-18 09:28:00,622 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.276s
+2026-11-18 09:28:09,345 | INFO | employees | REQUEST GET /login/ | User: admin_test
+2026-11-18 09:28:09,360 | INFO | employees | RESPONSE GET /login/ | Status: 200 | Time: 0.038s
+2026-11-19 09:30:25,552 | INFO | employees | REQUEST GET / | User: Anonymous
+2026-11-19 09:30:25,563 | INFO | employees | RESPONSE GET / | Status: 302 | Time: 0.451s
+2026-11-19 09:30:25,582 | INFO | employees | REQUEST GET /employees/ | User: Anonymous
+2026-11-19 09:30:25,585 | INFO | employees | RESPONSE GET /employees/ | Status: 302 | Time: 0.003s
+2026-11-19 09:30:25,597 | INFO | employees | REQUEST GET /login/ | User: Anonymous
+2026-11-19 09:30:25,668 | INFO | employees | RESPONSE GET /login/ | Status: 200 | Time: 0.070s
+2026-11-19 09:30:38,696 | INFO | employees | REQUEST POST /login/ | User: Anonymous
+2026-11-19 09:30:39,507 | INFO | employees | RESPONSE POST /login/ | Status: 302 | Time: 0.810s
+2026-11-19 09:30:39,553 | INFO | employees | REQUEST GET /employees/ | User: admin_test
+2026-11-19 09:30:39,890 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.353s
+2026-11-19 09:40:37,524 | INFO | employees | REQUEST DELETE /api/v1/employees/293/ | User: admin_u
+2026-11-19 09:40:37,702 | WARNING | employees.services.employee_service | Employee deleted: id=293 (success=True)
+2026-11-19 09:40:37,704 | INFO | employees.api | API: user admin_u deleted employee pk=293
+2026-11-19 09:40:37,705 | INFO | employees | RESPONSE DELETE /api/v1/employees/293/ | Status: 204 | Time: 0.192s
+2026-11-19 09:40:37,769 | INFO | employees | REQUEST GET /api/v1/employees/ | User: Anonymous
+2026-11-19 09:40:37,770 | INFO | employees | RESPONSE GET /api/v1/employees/ | Status: 403 | Time: 0.001s
+2026-11-19 09:40:37,774 | WARNING | django.request | Forbidden: /api/v1/employees/
+2026-11-19 09:40:38,493 | INFO | employees | REQUEST POST /api/v1/employees/ | User: hr_u
+2026-11-19 09:40:38,675 | INFO | employees | RESPONSE POST /api/v1/employees/ | Status: 400 | Time: 0.193s
+2026-11-19 09:40:38,676 | WARNING | django.request | Bad Request: /api/v1/employees/
+2026-11-19 09:40:39,776 | INFO | employees | REQUEST POST /api/v1/employees/ | User: hr_u
+2026-11-19 09:40:39,952 | INFO | employees.services.employee_service | Employee created: Thandi Nkosi (EMP100)
+2026-11-19 09:40:39,953 | INFO | employees.api | API: user hr_u created employee pk=294
+2026-11-19 09:40:39,957 | INFO | employees | RESPONSE POST /api/v1/employees/ | Status: 201 | Time: 0.205s
+2026-11-19 09:40:39,979 | INFO | employees | REQUEST DELETE /api/v1/employees/292/ | User: hr_u
+2026-11-19 09:40:40,124 | INFO | employees | RESPONSE DELETE /api/v1/employees/292/ | Status: 403 | Time: 0.165s
+2026-11-19 09:40:40,125 | WARNING | django.request | Forbidden: /api/v1/employees/292/
+2026-11-19 09:40:41,226 | INFO | employees | REQUEST POST /api/v1/employees/ | User: hr_u
+2026-11-19 09:40:41,323 | INFO | employees | RESPONSE POST /api/v1/employees/ | Status: 400 | Time: 0.119s
+2026-11-19 09:40:41,324 | WARNING | django.request | Bad Request: /api/v1/employees/
+2026-11-19 09:40:42,428 | INFO | employees | REQUEST GET /api/v1/employees/ | User: viewer_u
+2026-11-19 09:40:42,623 | INFO | employees | RESPONSE GET /api/v1/employees/ | Status: 200 | Time: 0.209s
+2026-11-19 09:40:42,641 | INFO | employees | REQUEST GET /api/v1/employees/292/ | User: viewer_u
+2026-11-19 09:40:42,672 | INFO | employees | RESPONSE GET /api/v1/employees/292/ | Status: 200 | Time: 0.047s
+2026-11-19 09:40:43,721 | INFO | employees | REQUEST GET /api/v1/employees/9999/ | User: viewer_u
+2026-11-19 09:40:43,804 | INFO | employees | RESPONSE GET /api/v1/employees/9999/ | Status: 404 | Time: 0.087s
+2026-11-19 09:40:43,804 | WARNING | django.request | Not Found: /api/v1/employees/9999/
+2026-11-19 09:40:45,049 | INFO | employees | REQUEST GET /api/v1/employees/292/ | User: admin_u
+2026-11-19 09:40:45,179 | INFO | employees | RESPONSE GET /api/v1/employees/292/ | Status: 200 | Time: 0.151s
+2026-11-19 09:40:46,701 | INFO | employees | REQUEST GET /api/v1/employees/ | User: viewer_u
+2026-11-19 09:40:46,930 | INFO | employees | RESPONSE GET /api/v1/employees/ | Status: 200 | Time: 0.265s
+2026-11-19 09:40:48,233 | INFO | employees | REQUEST GET /api/v1/employees/stats/ | User: viewer_u
+2026-11-19 09:40:48,376 | INFO | employees | RESPONSE GET /api/v1/employees/stats/ | Status: 200 | Time: 0.160s
+2026-11-19 09:40:49,442 | INFO | employees | REQUEST POST /api/v1/employees/ | User: viewer_u
+2026-11-19 09:40:49,552 | INFO | employees | RESPONSE POST /api/v1/employees/ | Status: 403 | Time: 0.136s
+2026-11-19 09:40:49,553 | WARNING | django.request | Forbidden: /api/v1/employees/
+2026-11-19 09:40:49,566 | INFO | employees | REQUEST DELETE /api/v1/employees/292/ | User: viewer_u
+2026-11-19 09:40:49,579 | INFO | employees | RESPONSE DELETE /api/v1/employees/292/ | Status: 403 | Time: 0.026s
+2026-11-19 09:40:49,580 | WARNING | django.request | Forbidden: /api/v1/employees/292/
+2026-11-19 09:40:49,754 | INFO | employees | REQUEST POST /health/ | User: Anonymous
+2026-11-19 09:40:49,755 | WARNING | django.request | Method Not Allowed (POST): /health/
+2026-11-19 09:40:49,755 | INFO | employees | RESPONSE POST /health/ | Status: 405 | Time: 0.001s
+2026-11-19 09:40:49,844 | INFO | employees | REQUEST GET /health/ | User: Anonymous
+2026-11-19 09:40:49,937 | INFO | employees | RESPONSE GET /health/ | Status: 503 | Time: 0.093s
+2026-11-19 09:40:49,937 | ERROR | django.request | Service Unavailable: /health/
+2026-11-19 09:40:50,025 | INFO | employees | REQUEST GET /health/ | User: Anonymous
+2026-11-19 09:40:50,028 | INFO | employees | RESPONSE GET /health/ | Status: 200 | Time: 0.003s
+2026-11-19 09:40:53,588 | INFO | employees | REQUEST POST /employees/add/ | User: hr_u
+2026-11-19 09:40:53,781 | INFO | employees.services.employee_service | Employee created: Marcus Osborn (EMP003)
+2026-11-19 09:40:53,782 | INFO | employees | RESPONSE POST /employees/add/ | Status: 302 | Time: 0.202s
+2026-11-19 09:40:54,658 | INFO | employees | REQUEST POST /employees/add/ | User: hr_u
+2026-11-19 09:40:54,882 | INFO | employees.services.employee_service | Employee created: Marcus Osborn (EMP002)
+2026-11-19 09:40:54,883 | INFO | employees | RESPONSE POST /employees/add/ | Status: 302 | Time: 0.247s
+2026-11-19 09:40:55,892 | INFO | employees | REQUEST GET /employees/296/ | User: hr_u
+2026-11-19 09:40:55,893 | INFO | employees.audit | AUDIT start | action=view employee | user=hr_u | ip=127.0.0.1 | GET /employees/296/
+2026-11-19 09:40:56,039 | INFO | employees.audit | AUDIT done | action=view employee | user=hr_u | status=200 | 0.146s
+2026-11-19 09:40:56,073 | INFO | employees | RESPONSE GET /employees/296/ | Status: 200 | Time: 0.203s
+2026-11-19 09:40:57,134 | INFO | employees | REQUEST GET /employees/296/delete/ | User: viewer_u
+2026-11-19 09:40:57,300 | ERROR | employees | EXCEPTION GET /employees/296/delete/ | Error: 
+Traceback (most recent call last):
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\utils\decorators.py", line 47, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\employees\decorators.py", line 52, in wrapper
+    response = view(request, *args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return self.handle_no_permission()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 49, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+2026-11-19 09:40:57,309 | WARNING | django.request | Forbidden (Permission denied): /employees/296/delete/
+Traceback (most recent call last):
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\utils\decorators.py", line 47, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\employees\decorators.py", line 52, in wrapper
+    response = view(request, *args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return self.handle_no_permission()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 49, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+2026-11-19 09:40:57,312 | INFO | employees | RESPONSE GET /employees/296/delete/ | Status: 403 | Time: 0.199s
+2026-11-19 09:40:57,387 | INFO | employees | REQUEST GET /health/ | User: Anonymous
+2026-11-19 09:40:57,388 | INFO | employees | RESPONSE GET /health/ | Status: 200 | Time: 0.002s
+2026-11-19 09:40:58,430 | INFO | employees | REQUEST GET /employees/add/ | User: hr_u
+2026-11-19 09:40:58,430 | INFO | employees.audit | AUDIT start | action=create employee | user=hr_u | ip=127.0.0.1 | GET /employees/add/
+2026-11-19 09:40:58,549 | INFO | employees.audit | AUDIT done | action=create employee | user=hr_u | status=200 | 0.119s
+2026-11-19 09:40:58,587 | INFO | employees | RESPONSE GET /employees/add/ | Status: 200 | Time: 0.175s
+2026-11-19 09:40:59,588 | INFO | employees | REQUEST POST /employees/add/ | User: hr_u
+2026-11-19 09:40:59,589 | INFO | employees.audit | AUDIT start | action=create employee | user=hr_u | ip=127.0.0.1 | POST /employees/add/
+2026-11-19 09:40:59,705 | WARNING | employees.audit | AUDIT rate-limited | scope=create-employee | user=hr_u | ip=127.0.0.1
+2026-11-19 09:40:59,706 | WARNING | employees.audit | AUDIT done | action=create employee | user=hr_u | status=429 | 0.117s
+2026-11-19 09:40:59,706 | INFO | employees | RESPONSE POST /employees/add/ | Status: 429 | Time: 0.135s
+2026-11-19 09:40:59,707 | WARNING | django.request | Too Many Requests: /employees/add/
+2026-11-19 09:41:02,955 | INFO | employees | REQUEST GET /dashboard/ | User: Anonymous
+2026-11-19 09:41:02,956 | INFO | employees | RESPONSE GET /dashboard/ | Status: 302 | Time: 0.001s
+2026-11-19 09:41:03,845 | INFO | employees | REQUEST GET /dashboard/ | User: viewer_u
+2026-11-19 09:41:04,026 | INFO | employees | RESPONSE GET /dashboard/ | Status: 200 | Time: 0.194s
+2026-11-19 09:41:08,028 | INFO | employees | REQUEST GET /logout/ | User: admin_u
+2026-11-19 09:41:08,029 | WARNING | django.request | Method Not Allowed (GET): /logout/
+2026-11-19 09:41:08,029 | INFO | employees | RESPONSE GET /logout/ | Status: 405 | Time: 0.020s
+2026-11-19 09:41:08,043 | INFO | employees | REQUEST POST /logout/ | User: admin_u
+2026-11-19 09:41:08,055 | INFO | employees | RESPONSE POST /logout/ | Status: 302 | Time: 0.025s
+2026-11-19 09:41:08,056 | INFO | employees | REQUEST GET /employees/ | User: Anonymous
+2026-11-19 09:41:08,056 | INFO | employees | RESPONSE GET /employees/ | Status: 302 | Time: 0.001s
+2026-11-19 09:41:08,965 | INFO | employees | REQUEST POST /login/ | User: Anonymous
+2026-11-19 09:41:09,894 | INFO | employees | RESPONSE POST /login/ | Status: 200 | Time: 0.929s
+2026-11-19 09:41:13,625 | INFO | employees | REQUEST GET /employees/add/ | User: admin_u
+2026-11-19 09:41:13,626 | INFO | employees.audit | AUDIT start | action=create employee | user=admin_u | ip=127.0.0.1 | GET /employees/add/
+2026-11-19 09:41:13,726 | INFO | employees.audit | AUDIT done | action=create employee | user=admin_u | status=200 | 0.100s
+2026-11-19 09:41:13,738 | INFO | employees | RESPONSE GET /employees/add/ | Status: 200 | Time: 0.125s
+2026-11-19 09:41:13,748 | INFO | employees | REQUEST GET /employees/331/delete/ | User: admin_u
+2026-11-19 09:41:13,748 | INFO | employees.audit | AUDIT start | action=delete employee | user=admin_u | ip=127.0.0.1 | GET /employees/331/delete/
+2026-11-19 09:41:13,769 | INFO | employees.audit | AUDIT done | action=delete employee | user=admin_u | status=200 | 0.020s
+2026-11-19 09:41:13,773 | INFO | employees | RESPONSE GET /employees/331/delete/ | Status: 200 | Time: 0.034s
+2026-11-19 09:41:14,584 | INFO | employees | REQUEST POST /employees/add/ | User: hr_u
+2026-11-19 09:41:14,588 | WARNING | django.security.csrf | Forbidden (CSRF cookie not set.): /employees/add/
+2026-11-19 09:41:14,588 | INFO | employees | RESPONSE POST /employees/add/ | Status: 403 | Time: 0.019s
+2026-11-19 09:41:18,573 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-11-19 09:41:18,707 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.145s
+2026-11-19 09:41:19,606 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-11-19 09:41:19,797 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.199s
+2026-11-19 09:41:23,722 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-11-19 09:41:23,896 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.183s
+2026-11-19 09:41:23,921 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-11-19 09:41:24,052 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.145s
+2026-11-19 09:41:24,074 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-11-19 09:41:24,097 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.032s
+2026-11-19 09:41:25,110 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-11-19 09:41:25,267 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.174s
+2026-11-19 09:41:25,301 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-11-19 09:41:25,446 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.162s
+2026-11-19 09:41:26,513 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-11-19 09:41:26,742 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.242s
+2026-11-19 09:41:27,672 | INFO | employees | REQUEST GET /employees/ | User: hr_u
+2026-11-19 09:41:27,817 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.175s
+2026-11-19 09:41:32,000 | INFO | employees | REQUEST GET /employees/338/delete/ | User: admin_u
+2026-11-19 09:41:32,001 | INFO | employees.audit | AUDIT start | action=delete employee | user=admin_u | ip=127.0.0.1 | GET /employees/338/delete/
+2026-11-19 09:41:32,135 | INFO | employees.audit | AUDIT done | action=delete employee | user=admin_u | status=200 | 0.134s
+2026-11-19 09:41:32,137 | INFO | employees | RESPONSE GET /employees/338/delete/ | Status: 200 | Time: 0.156s
+2026-11-19 09:41:32,151 | INFO | employees | REQUEST POST /employees/338/delete/ | User: admin_u
+2026-11-19 09:41:32,152 | INFO | employees.audit | AUDIT start | action=delete employee | user=admin_u | ip=127.0.0.1 | POST /employees/338/delete/
+2026-11-19 09:41:32,182 | WARNING | employees.services.employee_service | Employee deleted: id=338 (success=True)
+2026-11-19 09:41:32,183 | INFO | employees.views | User admin_u deleted employee pk=338
+2026-11-19 09:41:32,183 | INFO | employees.audit | AUDIT done | action=delete employee | user=admin_u | status=302 | 0.031s
+2026-11-19 09:41:32,183 | INFO | employees | RESPONSE POST /employees/338/delete/ | Status: 302 | Time: 0.045s
+2026-11-19 09:41:32,188 | INFO | employees | REQUEST GET /employees/ | User: admin_u
+2026-11-19 09:41:32,201 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.017s
+2026-11-19 09:41:34,536 | INFO | employees | REQUEST GET /employees/ | User: Anonymous
+2026-11-19 09:41:34,537 | INFO | employees | RESPONSE GET /employees/ | Status: 302 | Time: 0.001s
+2026-11-19 09:41:34,538 | INFO | employees | REQUEST GET /employees/add/ | User: Anonymous
+2026-11-19 09:41:34,539 | INFO | employees.audit | AUDIT start | action=create employee | user=anonymous | ip=127.0.0.1 | GET /employees/add/
+2026-11-19 09:41:34,539 | INFO | employees.audit | AUDIT done | action=create employee | user=anonymous | status=302 | 0.000s
+2026-11-19 09:41:34,539 | INFO | employees | RESPONSE GET /employees/add/ | Status: 302 | Time: 0.001s
+2026-11-19 09:41:34,540 | INFO | employees | REQUEST GET /employees/339/ | User: Anonymous
+2026-11-19 09:41:34,540 | INFO | employees.audit | AUDIT start | action=view employee | user=anonymous | ip=127.0.0.1 | GET /employees/339/
+2026-11-19 09:41:34,540 | INFO | employees.audit | AUDIT done | action=view employee | user=anonymous | status=302 | 0.000s
+2026-11-19 09:41:34,540 | INFO | employees | RESPONSE GET /employees/339/ | Status: 302 | Time: 0.001s
+2026-11-19 09:41:34,541 | INFO | employees | REQUEST GET /employees/339/edit/ | User: Anonymous
+2026-11-19 09:41:34,541 | INFO | employees.audit | AUDIT start | action=update employee | user=anonymous | ip=127.0.0.1 | GET /employees/339/edit/
+2026-11-19 09:41:34,541 | INFO | employees.audit | AUDIT done | action=update employee | user=anonymous | status=302 | 0.000s
+2026-11-19 09:41:34,541 | INFO | employees | RESPONSE GET /employees/339/edit/ | Status: 302 | Time: 0.001s
+2026-11-19 09:41:34,542 | INFO | employees | REQUEST GET /employees/339/delete/ | User: Anonymous
+2026-11-19 09:41:34,542 | INFO | employees.audit | AUDIT start | action=delete employee | user=anonymous | ip=127.0.0.1 | GET /employees/339/delete/
+2026-11-19 09:41:34,542 | INFO | employees.audit | AUDIT done | action=delete employee | user=anonymous | status=302 | 0.000s
+2026-11-19 09:41:34,542 | INFO | employees | RESPONSE GET /employees/339/delete/ | Status: 302 | Time: 0.001s
+2026-11-19 09:41:39,054 | INFO | employees | REQUEST POST /employees/add/ | User: hr_u
+2026-11-19 09:41:39,055 | INFO | employees.audit | AUDIT start | action=create employee | user=hr_u | ip=127.0.0.1 | POST /employees/add/
+2026-11-19 09:41:39,237 | INFO | employees.audit | AUDIT done | action=create employee | user=hr_u | status=200 | 0.182s
+2026-11-19 09:41:39,244 | INFO | employees | RESPONSE POST /employees/add/ | Status: 200 | Time: 0.214s
+2026-11-19 09:41:40,427 | INFO | employees | REQUEST POST /employees/add/ | User: hr_u
+2026-11-19 09:41:40,428 | INFO | employees.audit | AUDIT start | action=create employee | user=hr_u | ip=127.0.0.1 | POST /employees/add/
+2026-11-19 09:41:40,538 | INFO | employees.audit | AUDIT done | action=create employee | user=hr_u | status=200 | 0.110s
+2026-11-19 09:41:40,547 | INFO | employees | RESPONSE POST /employees/add/ | Status: 200 | Time: 0.126s
+2026-11-19 09:41:41,814 | INFO | employees | REQUEST GET /employees/9999/ | User: hr_u
+2026-11-19 09:41:41,815 | INFO | employees.audit | AUDIT start | action=view employee | user=hr_u | ip=127.0.0.1 | GET /employees/9999/
+2026-11-19 09:41:41,989 | WARNING | employees.audit | AUDIT refused | action=view employee | user=hr_u | ip=127.0.0.1 | reason=Http404
+2026-11-19 09:41:41,989 | ERROR | employees | EXCEPTION GET /employees/9999/ | Error: Employee not found.
+Traceback (most recent call last):
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\utils\decorators.py", line 47, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\employees\decorators.py", line 52, in wrapper
+    response = view(request, *args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\employees\decorators.py", line 116, in wrapper
+    response = view(request, *args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 110, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\views\generic\detail.py", line 112, in get
+    self.object = self.get_object()
+                  ~~~~~~~~~~~~~~~^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\employees\views.py", line 77, in get_object
+    raise Http404("Employee not found.")
+django.http.response.Http404: Employee not found.
+2026-11-19 09:41:41,994 | INFO | employees | RESPONSE GET /employees/9999/ | Status: 404 | Time: 0.201s
+2026-11-19 09:41:41,995 | WARNING | django.request | Not Found: /employees/9999/
+2026-11-19 09:41:45,773 | INFO | employees | REQUEST POST /employees/add/ | User: hr_u
+2026-11-19 09:41:45,774 | INFO | employees.audit | AUDIT start | action=create employee | user=hr_u | ip=127.0.0.1 | POST /employees/add/
+2026-11-19 09:41:45,987 | INFO | employees.services.employee_service | Employee created: Jane Osborn (EMP002)
+2026-11-19 09:41:45,988 | INFO | employees.audit | AUDIT done | action=create employee | user=hr_u | status=302 | 0.214s
+2026-11-19 09:41:45,988 | INFO | employees | RESPONSE POST /employees/add/ | Status: 302 | Time: 0.233s
+2026-11-19 09:41:46,014 | INFO | employees | REQUEST GET /employees/ | User: hr_u
+2026-11-19 09:41:46,186 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.197s
+2026-11-19 09:41:47,083 | INFO | employees | REQUEST POST /employees/341/edit/ | User: hr_u
+2026-11-19 09:41:47,084 | INFO | employees.audit | AUDIT start | action=update employee | user=hr_u | ip=127.0.0.1 | POST /employees/341/edit/
+2026-11-19 09:41:47,385 | INFO | employees.services.employee_service | Employee updated: id=341
+2026-11-19 09:41:47,386 | INFO | employees.views | User hr_u updated employee pk=341
+2026-11-19 09:41:47,386 | INFO | employees.audit | AUDIT done | action=update employee | user=hr_u | status=302 | 0.302s
+2026-11-19 09:41:47,386 | INFO | employees | RESPONSE POST /employees/341/edit/ | Status: 302 | Time: 0.325s
+2026-11-19 09:41:47,398 | INFO | employees | REQUEST GET /employees/341/ | User: hr_u
+2026-11-19 09:41:47,398 | INFO | employees.audit | AUDIT start | action=view employee | user=hr_u | ip=127.0.0.1 | GET /employees/341/
+2026-11-19 09:41:47,490 | INFO | employees.audit | AUDIT done | action=view employee | user=hr_u | status=200 | 0.092s
+2026-11-19 09:41:47,495 | INFO | employees | RESPONSE GET /employees/341/ | Status: 200 | Time: 0.107s
+2026-11-19 09:41:47,521 | INFO | employees | REQUEST GET /employees/341/ | User: hr_u
+2026-11-19 09:41:47,521 | INFO | employees.audit | AUDIT start | action=view employee | user=hr_u | ip=127.0.0.1 | GET /employees/341/
+2026-11-19 09:41:47,650 | INFO | employees.audit | AUDIT done | action=view employee | user=hr_u | status=200 | 0.129s
+2026-11-19 09:41:47,652 | INFO | employees | RESPONSE GET /employees/341/ | Status: 200 | Time: 0.146s
+2026-11-19 09:41:48,506 | INFO | employees | REQUEST GET /employees/341/delete/ | User: hr_u
+2026-11-19 09:41:48,507 | INFO | employees.audit | AUDIT start | action=delete employee | user=hr_u | ip=127.0.0.1 | GET /employees/341/delete/
+2026-11-19 09:41:48,621 | WARNING | employees.audit | AUDIT refused | action=delete employee | user=hr_u | ip=127.0.0.1 | reason=PermissionDenied
+2026-11-19 09:41:48,622 | ERROR | employees | EXCEPTION GET /employees/341/delete/ | Error: 
+Traceback (most recent call last):
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\utils\decorators.py", line 47, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\employees\decorators.py", line 52, in wrapper
+    response = view(request, *args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return self.handle_no_permission()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 49, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+2026-11-19 09:41:48,624 | WARNING | django.request | Forbidden (Permission denied): /employees/341/delete/
+Traceback (most recent call last):
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\utils\decorators.py", line 47, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\employees\decorators.py", line 52, in wrapper
+    response = view(request, *args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return self.handle_no_permission()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 49, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+2026-11-19 09:41:48,625 | INFO | employees | RESPONSE GET /employees/341/delete/ | Status: 403 | Time: 0.135s
+2026-11-19 09:41:52,092 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-11-19 09:41:52,219 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.148s
+2026-11-19 09:41:52,244 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-11-19 09:41:52,292 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.060s
+2026-11-19 09:41:53,290 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-11-19 09:41:53,425 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.158s
+2026-11-19 09:41:54,319 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-11-19 09:41:54,461 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.157s
+2026-11-19 09:41:55,362 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-11-19 09:41:55,557 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.220s
+2026-11-19 09:41:59,135 | INFO | employees | REQUEST GET /employees/ | User: viewer_u
+2026-11-19 09:41:59,300 | INFO | employees | RESPONSE GET /employees/ | Status: 200 | Time: 0.184s
+2026-11-19 09:42:00,206 | INFO | employees | REQUEST POST /employees/348/delete/ | User: viewer_u
+2026-11-19 09:42:00,206 | INFO | employees.audit | AUDIT start | action=delete employee | user=viewer_u | ip=127.0.0.1 | POST /employees/348/delete/
+2026-11-19 09:42:00,349 | WARNING | employees.audit | AUDIT refused | action=delete employee | user=viewer_u | ip=127.0.0.1 | reason=PermissionDenied
+2026-11-19 09:42:00,349 | ERROR | employees | EXCEPTION POST /employees/348/delete/ | Error: 
+Traceback (most recent call last):
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\utils\decorators.py", line 47, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\employees\decorators.py", line 52, in wrapper
+    response = view(request, *args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return self.handle_no_permission()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 49, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+2026-11-19 09:42:00,351 | WARNING | django.request | Forbidden (Permission denied): /employees/348/delete/
+Traceback (most recent call last):
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\utils\decorators.py", line 47, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\employees\decorators.py", line 52, in wrapper
+    response = view(request, *args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return self.handle_no_permission()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 49, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+2026-11-19 09:42:00,352 | INFO | employees | RESPONSE POST /employees/348/delete/ | Status: 403 | Time: 0.167s
+2026-11-19 09:42:01,260 | INFO | employees | REQUEST GET /employees/348/ | User: viewer_u
+2026-11-19 09:42:01,261 | INFO | employees.audit | AUDIT start | action=view employee | user=viewer_u | ip=127.0.0.1 | GET /employees/348/
+2026-11-19 09:42:01,405 | INFO | employees.audit | AUDIT done | action=view employee | user=viewer_u | status=200 | 0.144s
+2026-11-19 09:42:01,407 | INFO | employees | RESPONSE GET /employees/348/ | Status: 200 | Time: 0.162s
+2026-11-19 09:42:02,193 | INFO | employees | REQUEST GET /employees/add/ | User: viewer_u
+2026-11-19 09:42:02,193 | INFO | employees.audit | AUDIT start | action=create employee | user=viewer_u | ip=127.0.0.1 | GET /employees/add/
+2026-11-19 09:42:02,240 | WARNING | employees.audit | AUDIT refused | action=create employee | user=viewer_u | ip=127.0.0.1 | reason=PermissionDenied
+2026-11-19 09:42:02,240 | ERROR | employees | EXCEPTION GET /employees/add/ | Error: 
+Traceback (most recent call last):
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\utils\decorators.py", line 47, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\employees\decorators.py", line 52, in wrapper
+    response = view(request, *args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return self.handle_no_permission()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 49, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+2026-11-19 09:42:02,243 | WARNING | django.request | Forbidden (Permission denied): /employees/add/
+Traceback (most recent call last):
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\utils\decorators.py", line 47, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\employees\decorators.py", line 52, in wrapper
+    response = view(request, *args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return self.handle_no_permission()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 49, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+2026-11-19 09:42:02,244 | INFO | employees | RESPONSE GET /employees/add/ | Status: 403 | Time: 0.066s
+2026-11-19 09:42:02,250 | INFO | employees | REQUEST GET /employees/348/edit/ | User: viewer_u
+2026-11-19 09:42:02,250 | INFO | employees.audit | AUDIT start | action=update employee | user=viewer_u | ip=127.0.0.1 | GET /employees/348/edit/
+2026-11-19 09:42:02,253 | WARNING | employees.audit | AUDIT refused | action=update employee | user=viewer_u | ip=127.0.0.1 | reason=PermissionDenied
+2026-11-19 09:42:02,253 | ERROR | employees | EXCEPTION GET /employees/348/edit/ | Error: 
+Traceback (most recent call last):
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\utils\decorators.py", line 47, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\employees\decorators.py", line 52, in wrapper
+    response = view(request, *args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\employees\decorators.py", line 116, in wrapper
+    response = view(request, *args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return self.handle_no_permission()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 49, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+2026-11-19 09:42:02,255 | WARNING | django.request | Forbidden (Permission denied): /employees/348/edit/
+Traceback (most recent call last):
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\utils\decorators.py", line 47, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\employees\decorators.py", line 52, in wrapper
+    response = view(request, *args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\employees\decorators.py", line 116, in wrapper
+    response = view(request, *args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return self.handle_no_permission()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 49, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+2026-11-19 09:42:02,256 | INFO | employees | RESPONSE GET /employees/348/edit/ | Status: 403 | Time: 0.011s
+2026-11-19 09:42:02,260 | INFO | employees | REQUEST GET /employees/348/delete/ | User: viewer_u
+2026-11-19 09:42:02,260 | INFO | employees.audit | AUDIT start | action=delete employee | user=viewer_u | ip=127.0.0.1 | GET /employees/348/delete/
+2026-11-19 09:42:02,264 | WARNING | employees.audit | AUDIT refused | action=delete employee | user=viewer_u | ip=127.0.0.1 | reason=PermissionDenied
+2026-11-19 09:42:02,264 | ERROR | employees | EXCEPTION GET /employees/348/delete/ | Error: 
+Traceback (most recent call last):
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\utils\decorators.py", line 47, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\employees\decorators.py", line 52, in wrapper
+    response = view(request, *args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return self.handle_no_permission()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 49, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+2026-11-19 09:42:02,267 | WARNING | django.request | Forbidden (Permission denied): /employees/348/delete/
+Traceback (most recent call last):
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\core\handlers\exception.py", line 56, in inner
+    response = get_response(request)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\core\handlers\base.py", line 199, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\utils\decorators.py", line 47, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\employees\decorators.py", line 52, in wrapper
+    response = view(request, *args, **kwargs)
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 109, in dispatch
+    return self.handle_no_permission()
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\TALEAH.D\OneDrive - Curro Holdings\Taleah SDL PoE\Evidence\PM\PM09\PSA\Supplementary\skillbridge_ems - Attempt2\skillbridge_ems_attempt2\venv\Lib\site-packages\django\contrib\auth\mixins.py", line 49, in handle_no_permission
+    raise PermissionDenied(self.get_permission_denied_message())
+django.core.exceptions.PermissionDenied
+2026-11-19 09:42:02,268 | INFO | employees | RESPONSE GET /employees/348/delete/ | Status: 403 | Time: 0.011s
+2026-11-19 09:42:02,281 | WARNING | employees.audit | AUDIT rate-limited | scope=test | user=anonymous | ip=127.0.0.1
+2026-11-19 09:42:02,282 | WARNING | employees.audit | AUDIT rate-limited | scope=test | user=hr_u | ip=127.0.0.1
+2026-11-19 09:42:02,282 | WARNING | employees.audit | AUDIT rate-limited | scope=test | user=hr_u | ip=127.0.0.1
+2026-11-19 09:42:12,892 | INFO | employees.services.employee_service | Employee created: namespace(pk=1, employee_id='EMP001', email='a@example.com')
+2026-11-19 09:42:12,894 | INFO | employees.services.employee_service | Employee created: namespace(pk=1, employee_id='EMP001', email='a@example.com')
+2026-11-19 09:42:12,894 | WARNING | employees.services.employee_service | Employee deleted: id=1 (success=True)
+2026-11-19 09:42:12,894 | WARNING | employees.services.employee_service | Employee deleted: id=1 (success=False)
+2026-11-19 09:42:12,895 | INFO | employees.services.employee_service | Employee created: namespace(pk=1, employee_id='EMP001', email='a@example.com')
+2026-11-19 09:42:12,895 | WARNING | employees.services.employee_service | Create rejected: duplicate email A@EXAMPLE.COM
+2026-11-19 09:42:12,895 | INFO | employees.services.employee_service | Employee created: namespace(pk=1, employee_id='EMP001', email='a@example.com')
+2026-11-19 09:42:12,896 | WARNING | employees.services.employee_service | Create rejected: duplicate employee ID emp001
+2026-11-19 09:42:12,896 | INFO | employees.services.employee_service | Employee created: namespace(pk=1, employee_id='EMP001', email='a@example.com')
+2026-11-19 09:42:12,897 | INFO | employees.services.employee_service | Employee created: namespace(pk=1, employee_id='EMP001', email='a@example.com')
+2026-11-19 09:42:12,897 | INFO | employees.services.employee_service | Employee updated: id=1
+2026-11-19 09:42:12,897 | INFO | employees.services.employee_service | Employee created: namespace(pk=1, employee_id='EMP001', email='a@example.com')
+2026-11-19 09:42:12,897 | INFO | employees.services.employee_service | Employee created: namespace(pk=2, employee_id='EMP002', email='b@example.com')
+2026-11-19 09:42:12,897 | WARNING | employees.services.employee_service | Update rejected: duplicate email a@example.com
+2026-11-19 09:42:12,897 | WARNING | employees.services.employee_service | Update rejected: employee id=99 not found
+2026-11-19 09:42:12,898 | INFO | employees.services.employee_service | Employee created: namespace(pk=1, employee_id='EMP001', email='a@example.com')

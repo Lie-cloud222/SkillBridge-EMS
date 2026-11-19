@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Lie-cloud222/SkillBridge-EMS/issues"
   },
-  "homepage": "https://github.com/Lie-cloud222/SkillBridge-EMS#readme"
+  "homepage": "https://github.com/Lie-cloud222/SkillBridge-EMS#readme",
+  "devDependencies": {
+    "sass": "^1.108.2"
+  }
 }
